@@ -9,7 +9,7 @@ const galleryItemMarkup = createGalleryItemMarkup("galleryItem");
 function createGalleryItemMarkup(item) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `
+      return `<ul class="gallery__list><li>
       <a class="gallery__item" href="${original}">
         <img
           class="gallery__image"
@@ -17,7 +17,7 @@ function createGalleryItemMarkup(item) {
           data-source="${original}"
           alt="${description}"
         />
-      </a>`;
+      </a></li></ul>`;
     })
     .join("");
 }
@@ -29,8 +29,8 @@ const modalWindow = new SimpleLightbox(".gallery a", {
   captionDelay: 150,
 });
 
-galleryRef.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" || event.key === "Enter") {
-    modalWindow.close();
-  }
-});
+// galleryRef.addEventListener("keydown", (event) => {
+//   if (event.key === "Escape" || event.key === "Enter") {
+//     modalWindow.close();
+//   }
+// });

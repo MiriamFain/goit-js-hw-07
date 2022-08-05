@@ -50,5 +50,6 @@ function onItemContainerClick(event) {
     if (event.key === "Escape") {
       modalWindow.close();
     }
+    galleryRef.removeEventListener("click", onItemContainerClick);
   });
 }
